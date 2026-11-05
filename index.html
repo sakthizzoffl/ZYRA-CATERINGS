@@ -6,7 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZYRA CATERINGS</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -17,29 +18,31 @@
 
 :root {
   --gold: #d6b56d;
+  --black: #080808;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  background: #080808;
+  background: var(--black);
   color: white;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
-/* FULL SCREEN ROTATED BACKGROUND */
+/* FULL SCREEN BACKGROUND IMAGE */
 body::before {
   content: "";
   position: fixed;
-  width: 100vh;
-  height: 100vw;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%) rotate(90deg);
+  inset: 0;
   background-image:
-    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.72)),
-    url("https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?auto=format&fit=crop&w=1400&q=90");
+    linear-gradient(
+      rgba(0,0,0,.55),
+      rgba(0,0,0,.72)
+    ),
+    url("https://raw.githubusercontent.com/sakthizzoffl/ZYRA-CATERINGS/main/a95dfe9c91b4c03ba991259549e8724f.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -47,6 +50,7 @@ body::before {
   pointer-events: none;
 }
 
+/* HEADER */
 header {
   position: relative;
   z-index: 1;
@@ -59,10 +63,11 @@ header {
 }
 
 .logo {
-  font-family: 'Playfair Display',serif;
+  font-family: 'Gemola', Georgia, serif;
   color: var(--gold);
-  font-size: 24px;
+  font-size: 25px;
   letter-spacing: 3px;
+  font-weight: 600;
 }
 
 nav {
@@ -73,9 +78,17 @@ nav {
 nav a {
   color: white;
   text-decoration: none;
-  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  transition: .3s;
 }
 
+nav a:hover {
+  color: var(--gold);
+}
+
+/* HERO */
 .hero {
   position: relative;
   z-index: 1;
@@ -89,18 +102,21 @@ nav a {
 }
 
 .hero h1 {
-  font-family: 'Playfair Display',serif;
+  font-family: 'Cinzel', serif;
   color: var(--gold);
   font-size: clamp(38px,7vw,70px);
   letter-spacing: 4px;
+  font-weight: 600;
 }
 
 .hero p {
   color: #eee;
   line-height: 2;
   margin: 22px 0 30px;
+  font-family: 'Inter', sans-serif;
 }
 
+/* GOLD LINE */
 .gold-line {
   width: 90px;
   height: 2px;
@@ -108,16 +124,26 @@ nav a {
   margin: 22px auto;
 }
 
+/* BOOKING LINK BUTTON */
 .btn {
   display: inline-block;
   padding: 14px 28px;
   background: var(--gold);
   color: #080808;
   text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
   font-weight: 700;
   border-radius: 4px;
+  transition: .3s;
 }
 
+.btn:hover {
+  background: #f0d18b;
+  transform: translateY(-2px);
+}
+
+/* SECTIONS */
 section {
   position: relative;
   z-index: 1;
@@ -127,9 +153,10 @@ section {
 }
 
 h2 {
-  font-family: 'Playfair Display',serif;
+  font-family: 'Cinzel', serif;
   color: var(--gold);
-  font-size: 32px;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .description {
@@ -140,6 +167,7 @@ h2 {
   font-size: 14px;
 }
 
+/* SERVICES */
 .services {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(190px,1fr));
@@ -152,6 +180,12 @@ h2 {
   background: rgba(12,12,12,.88);
   border: 1px solid #967944;
   border-radius: 7px;
+  transition: .3s;
+}
+
+.service-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-5px);
 }
 
 .service-card .icon {
@@ -160,17 +194,20 @@ h2 {
 }
 
 .service-card h3 {
-  font-family: 'Playfair Display',serif;
+  font-family: 'Cinzel', serif;
   color: var(--gold);
+  font-size: 17px;
   margin-bottom: 12px;
 }
 
 .service-card p {
   color: #ccc;
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
   line-height: 1.8;
 }
 
+/* BOOKING FORM */
 form {
   max-width: 570px;
   margin: 30px auto;
@@ -185,7 +222,9 @@ label {
   display: block;
   color: var(--gold);
   margin-top: 16px;
+  font-family: 'Inter', sans-serif;
   font-size: 13px;
+  font-weight: 500;
 }
 
 input, select, textarea {
@@ -196,10 +235,19 @@ input, select, textarea {
   border: 1px solid #78613a;
   border-radius: 4px;
   color: white;
-  font-family: 'Poppins',sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
 }
 
-input::placeholder, textarea::placeholder {
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+input::placeholder,
+textarea::placeholder {
   color: #aaa;
 }
 
@@ -211,6 +259,7 @@ input::placeholder, textarea::placeholder {
   display: block;
 }
 
+/* SUBMIT BUTTON */
 button {
   width: 100%;
   padding: 15px;
@@ -218,12 +267,19 @@ button {
   background: var(--gold);
   border: none;
   color: #080808;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   border-radius: 4px;
+  transition: .3s;
 }
 
+button:hover {
+  background: #f0d18b;
+}
+
+/* FOOTER */
 footer {
   position: relative;
   z-index: 1;
@@ -239,29 +295,43 @@ footer h2 {
 
 footer p {
   color: #bbb;
+  font-family: 'Inter', sans-serif;
   font-size: 12px;
   line-height: 2;
 }
 
+/* MOBILE RESPONSIVE */
 @media(max-width:600px) {
   header {
     flex-direction: column;
     gap: 15px;
   }
 
-  nav { gap: 18px; }
+  nav {
+    gap: 18px;
+  }
 
-  .hero { min-height: 440px; }
+  .hero {
+    min-height: 440px;
+  }
 
-  form { padding: 20px 15px; }
+  form {
+    padding: 20px 15px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
 }
 </style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
   <div class="logo">ZYRA CATERINGS</div>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#services">Services</a>
@@ -269,20 +339,30 @@ footer p {
   </nav>
 </header>
 
+<!-- HERO -->
 <div class="hero" id="home">
   <div>
     <p>PREMIUM EVENT SERVING SERVICES</p>
+
     <h1>ZYRA CATERINGS</h1>
+
     <div class="gold-line"></div>
-    <p>Elegance • Service • Excellence<br>
-    Making Every Occasion Special</p>
+
+    <p>
+      Elegance • Service • Excellence<br>
+      Making Every Occasion Special
+    </p>
+
     <a href="#booking" class="btn">BOOK OUR SERVICE</a>
   </div>
 </div>
 
+<!-- WELCOME -->
 <section>
   <h2>WELCOME TO ZYRA</h2>
+
   <div class="gold-line"></div>
+
   <p class="description">
     We provide professional serving staff for weddings,
     receptions, birthdays and special occasions.
@@ -290,11 +370,14 @@ footer p {
   </p>
 </section>
 
+<!-- SERVICES -->
 <section id="services">
   <h2>OUR SERVICES</h2>
+
   <div class="gold-line"></div>
 
   <div class="services">
+
     <div class="service-card">
       <div class="icon">🍽️</div>
       <h3>Wedding Events</h3>
@@ -318,12 +401,16 @@ footer p {
       <h3>Corporate Events</h3>
       <p>Professional event serving teams.</p>
     </div>
+
   </div>
 </section>
 
+<!-- BOOKING -->
 <section id="booking">
   <h2>BOOK OUR SERVICE</h2>
+
   <div class="gold-line"></div>
+
   <p class="description">Fill in your event details.</p>
 
   <form id="bookingForm">
@@ -332,8 +419,14 @@ footer p {
     <input id="name" required placeholder="Your full name">
 
     <label>Mobile Number *</label>
-    <input id="mobile" type="tel" pattern="[0-9]{10}"
-    maxlength="10" required placeholder="10 digit number">
+    <input
+      id="mobile"
+      type="tel"
+      pattern="[0-9]{10}"
+      maxlength="10"
+      required
+      placeholder="10 digit number"
+    >
 
     <label>Event Type *</label>
     <select id="event" required>
@@ -357,8 +450,13 @@ footer p {
     <input id="date" type="date" required>
 
     <label>Expected Guest Count *</label>
-    <input id="guests" type="number" min="1" required
-    placeholder="Number of guests">
+    <input
+      id="guests"
+      type="number"
+      min="1"
+      required
+      placeholder="Number of guests"
+    >
 
     <label>Event Location *</label>
     <input id="location" required placeholder="Venue / City">
@@ -380,13 +478,18 @@ footer p {
     </div>
 
     <label>Additional Requirements</label>
-    <textarea id="notes" rows="4"
-    placeholder="Any additional details"></textarea>
+    <textarea
+      id="notes"
+      rows="4"
+      placeholder="Any additional details"
+    ></textarea>
 
     <button type="submit">SEND BOOKING ENQUIRY</button>
+
   </form>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <h2>ZYRA CATERINGS</h2>
   <p>Premium Event Serving Services</p>
@@ -395,23 +498,31 @@ footer p {
   <p>© 2026 ZYRA CATERINGS. All Rights Reserved.</p>
 </footer>
 
+<!-- BOOKING SCRIPT -->
 <script>
 const eventSelect = document.getElementById("event");
 const serviceSelect = document.getElementById("service");
 
 eventSelect.addEventListener("change", function() {
   const show = this.value === "Other";
-  document.getElementById("eventOtherBox").classList.toggle("show",show);
+
+  document.getElementById("eventOtherBox")
+    .classList.toggle("show", show);
+
   document.getElementById("eventOther").required = show;
 });
 
 serviceSelect.addEventListener("change", function() {
   const show = this.value === "Other";
-  document.getElementById("serviceOtherBox").classList.toggle("show",show);
+
+  document.getElementById("serviceOtherBox")
+    .classList.toggle("show", show);
+
   document.getElementById("serviceOther").required = show;
 });
 
-document.getElementById("bookingForm").addEventListener("submit",function(e) {
+document.getElementById("bookingForm")
+.addEventListener("submit", function(e) {
   e.preventDefault();
 
   const eventValue = eventSelect.value === "Other"
@@ -423,17 +534,32 @@ document.getElementById("bookingForm").addEventListener("submit",function(e) {
     : serviceSelect.value;
 
   let message = "ZYRA CATERINGS - NEW BOOKING ENQUIRY\n\n";
-  message += "Name: " + document.getElementById("name").value + "\n";
-  message += "Mobile: " + document.getElementById("mobile").value + "\n";
+
+  message += "Name: " +
+    document.getElementById("name").value + "\n";
+
+  message += "Mobile: " +
+    document.getElementById("mobile").value + "\n";
+
   message += "Event: " + eventValue + "\n";
-  message += "Date: " + document.getElementById("date").value + "\n";
-  message += "Guests: " + document.getElementById("guests").value + "\n";
-  message += "Location: " + document.getElementById("location").value + "\n";
+
+  message += "Date: " +
+    document.getElementById("date").value + "\n";
+
+  message += "Guests: " +
+    document.getElementById("guests").value + "\n";
+
+  message += "Location: " +
+    document.getElementById("location").value + "\n";
+
   message += "Service: " + serviceValue + "\n";
-  message += "Additional Requirements: " + document.getElementById("notes").value;
+
+  message += "Additional Requirements: " +
+    document.getElementById("notes").value;
 
   window.open(
-    "https://wa.me/919952625077?text=" + encodeURIComponent(message),
+    "https://wa.me/919952625077?text=" +
+    encodeURIComponent(message),
     "_blank"
   );
 });
