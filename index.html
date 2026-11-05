@@ -28,11 +28,14 @@ body {
   isolation: isolate;
 }
 
-/* STABLE BACKGROUND */
+/* STABLE FULL PAGE BACKGROUND */
 body::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image:
     linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.82)),
     url("https://raw.githubusercontent.com/sakthizzoffl/ZYRA-CATERINGS/main/a95dfe9c91b4c03ba991259549e8724f.jpg");
@@ -153,7 +156,8 @@ h2 {
 }
 
 .service-card {
-  background: rgba(0,0,0,.78);
+  display: block;
+  background: rgba(0,0,0,.82);
   border: 1px solid rgba(212,175,55,.55);
   padding: 30px 18px;
   text-align: center;
@@ -179,23 +183,30 @@ h2 {
   line-height: 1.7;
 }
 
-/* CENTRED A-Z BOX */
+/* FIFTH BOX - A TO Z */
 .az-card {
-  grid-column: 1 / -1;
-  justify-self: center;
-  width: min(100%, 430px);
-  border: 1px solid #d4af37;
-  background: rgba(0,0,0,.88);
-  padding: 35px 22px;
+  display: block !important;
+  grid-column: 1 / -1 !important;
+  justify-self: center !important;
+  width: min(100%, 430px) !important;
+  border: 2px solid #d4af37 !important;
+  background: rgba(0,0,0,.92) !important;
+  padding: 35px 22px !important;
+  text-align: center;
 }
 
 .az-card h3 {
+  font-family: 'Cinzel', serif;
+  color: #d4af37;
   font-size: 23px;
   letter-spacing: 1px;
+  margin-bottom: 12px;
 }
 
 .az-card p {
+  color: #eee;
   font-size: 14px;
+  line-height: 1.8;
 }
 
 /* BOOKING */
@@ -203,7 +214,7 @@ h2 {
   max-width: 650px;
   margin: 30px auto 0;
   padding: 30px;
-  background: rgba(0,0,0,.82);
+  background: rgba(0,0,0,.85);
   border: 1px solid rgba(212,175,55,.6);
   border-radius: 8px;
 }
@@ -264,7 +275,7 @@ form button {
 footer {
   text-align: center;
   padding: 28px 15px;
-  background: rgba(0,0,0,.8);
+  background: rgba(0,0,0,.85);
   border-top: 1px solid rgba(212,175,55,.4);
   color: #ccc;
   font-size: 12px;
@@ -275,6 +286,7 @@ footer span {
   color: #d4af37;
 }
 
+/* MOBILE */
 @media (max-width: 600px) {
   header {
     justify-content: center;
@@ -295,8 +307,8 @@ footer span {
   }
 
   .az-card {
-    grid-column: auto;
-    width: 100%;
+    grid-column: 1 !important;
+    width: 100% !important;
   }
 
   .booking-container {
@@ -341,26 +353,31 @@ footer span {
 
   <div class="services-grid">
 
+    <!-- BOX 1 -->
     <div class="service-card">
       <h3>Wedding Events</h3>
       <p>Professional serving support for your special wedding celebrations.</p>
     </div>
 
+    <!-- BOX 2 -->
     <div class="service-card">
       <h3>Receptions</h3>
       <p>Dedicated serving support for elegant reception functions.</p>
     </div>
 
+    <!-- BOX 3 -->
     <div class="service-card">
       <h3>Birthday Events</h3>
       <p>Serving assistance for birthday parties and celebrations.</p>
     </div>
 
+    <!-- BOX 4 -->
     <div class="service-card">
       <h3>Corporate Events</h3>
       <p>Organised serving support for corporate gatherings and events.</p>
     </div>
 
+    <!-- BOX 5 - CENTRED A-Z -->
     <div class="service-card az-card">
       <h3>A–Z Event Services</h3>
       <p>Complete serving support for every occasion, from A to Z.</p>
@@ -380,7 +397,8 @@ footer span {
       <input type="text" id="name" placeholder="Enter your name" required>
 
       <label for="mobile">Mobile Number</label>
-      <input type="tel" id="mobile" placeholder="Enter mobile number"
+      <input type="tel" id="mobile"
+      placeholder="Enter mobile number"
       pattern="[0-9]{10}" maxlength="10" required>
 
       <label for="event">Event Type</label>
@@ -461,6 +479,7 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
 
   const name = document.getElementById("name").value.trim();
   const mobile = document.getElementById("mobile").value.trim();
+
   const event = eventSelect.value === "Other"
     ? otherEvent.value.trim()
     : eventSelect.value;
