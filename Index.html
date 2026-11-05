@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zyra Caterings | Premium Serving Services</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#080808;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #b99a55}
+.logo{color:#d7b76b;font-size:25px;font-weight:bold;letter-spacing:3px}
+nav a{color:white;text-decoration:none;margin-left:15px;font-size:13px}
+.hero{text-align:center;padding:90px 20px;background:linear-gradient(135deg,#17130b,#050505)}
+.hero h1{font-size:42px;color:#d9b86b;letter-spacing:3px}
+.hero p{color:#ccc;margin:20px auto;line-height:1.8}
+.btn{display:inline-block;background:#c5a45e;color:#080808;padding:14px 25px;text-decoration:none;font-weight:bold;border-radius:4px}
+section{padding:65px 8%;text-align:center}
+h2{color:#d7b76b;font-size:29px;margin-bottom:20px}
+.desc{color:#bbb;line-height:1.8;max-width:650px;margin:auto}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;margin-top:30px}
+.service{border:1px solid #a88a4c;padding:28px 12px;border-radius:8px}
+.service h3{color:#d7b76b;margin-bottom:12px}
+.service p{color:#bbb;font-size:14px;line-height:1.6}
+form{max-width:550px;margin:30px auto;text-align:left}
+input,select,textarea{width:100%;padding:14px;margin:9px 0;background:#171717;border:1px solid #766039;color:white;border-radius:5px}
+label{color:#d7b76b;font-size:13px}
+button{width:100%;padding:15px;background:#c5a45e;color:#080808;border:0;font-weight:bold;font-size:16px;border-radius:5px;margin-top:12px}
+footer{padding:30px;text-align:center;background:#15120b;color:#c5a45e;line-height:2}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">ZYRA CATERINGS</div>
+<nav><a href="#home">Home</a><a href="#services">Services</a><a href="#booking">Booking</a></nav>
+</header>
+
+<div class="hero" id="home">
+<h1>ZYRA CATERINGS</h1>
+<p>Premium Event Serving Services<br>
+Making Every Occasion Special</p>
+<a class="btn" href="#booking">BOOK OUR SERVICE</a>
+</div>
+
+<section>
+<h2>WELCOME TO ZYRA</h2>
+<p class="desc">We provide professional serving staff for weddings, receptions, birthdays and special occasions. Our goal is to make every event smooth and memorable.</p>
+</section>
+
+<section id="services">
+<h2>OUR SERVICES</h2>
+<div class="services">
+<div class="service"><h3>Weddings</h3><p>Professional event serving support.</p></div>
+<div class="service"><h3>Receptions</h3><p>Serving staff for your special day.</p></div>
+<div class="service"><h3>Birthdays</h3><p>Serving support for celebrations.</p></div>
+<div class="service"><h3>Corporate Events</h3><p>Professional event serving teams.</p></div>
+</div>
+</section>
+
+<section id="booking">
+<h2>BOOK OUR SERVICE</h2>
+<p class="desc">Fill in your event details. Our team will contact you.</p>
+
+<form id="bookingForm">
+<label>Full Name</label>
+<input id="name" required placeholder="Your full name">
+
+<label>Mobile Number</label>
+<input id="mobile" required type="tel" pattern="[0-9]{10}" placeholder="10 digit mobile number">
+
+<label>Event Type</label>
+<select id="event" required>
+<option value="">Select Event</option>
+<option>Wedding</option>
+<option>Reception</option>
+<option>Engagement</option>
+<option>Birthday</option>
+<option>Corporate Event</option>
+<option>Other</option>
+</select>
+
+<label>Event Date</label>
+<input id="date" required type="date">
+
+<label>Expected Guest Count</label>
+<input id="guests" required type="number" min="1" placeholder="Number of guests">
+
+<label>Event Location</label>
+<input id="location" required placeholder="Venue / City">
+
+<label>Service Required</label>
+<select id="service" required>
+<option value="">Select Service</option>
+<option>Food Serving Staff</option>
+<option>Water Serving</option>
+<option>Complete Serving Team</option>
+<option>Other</option>
+</select>
+
+<label>Additional Requirements</label>
+<textarea id="notes" rows="4" placeholder="Any other details"></textarea>
+
+<button type="submit">SEND BOOKING ENQUIRY</button>
+</form>
+</section>
+
+<footer>
+<h2>ZYRA CATERINGS</h2>
+<p>Premium Serving Services</p>
+<p>WhatsApp: +91 9952625077</p>
+<p>Founder: Sakthi</p>
+<p>© 2026 Zyra Caterings. All Rights Reserved.</p>
+</footer>
+
+<script>
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+e.preventDefault();
+const fields=["name","mobile","event","date","guests","location","service","notes"];
+let msg="ZYRA CATERINGS - NEW BOOKING ENQUIRY\n\n";
+fields.forEach(id=>{
+let el=document.getElementById(id);
+msg+=el.previousElementSibling.innerText+": "+(el.value||"Not provided")+"\n";
+});
+window.open("https://wa.me/919952625077?text="+encodeURIComponent(msg),"_blank");
+});
+</script>
+</body>
+</html>
