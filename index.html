@@ -1,194 +1,344 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zyra Caterings | Premium Serving Services</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>ZYRA CATERINGS | Premium Serving Services</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #d6b56d;
+  --lightgold: #f1d99b;
+  --black: #090909;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: #080808;
-  color: white;
+  background:
+    radial-gradient(ellipse at 15% 20%, #302519 0%, transparent 40%),
+    radial-gradient(ellipse at 85% 65%, #282016 0%, transparent 45%),
+    linear-gradient(135deg,#080808,#17130d,#080808);
+  color: #fff;
   font-family: 'Poppins', sans-serif;
   position: relative;
+  overflow-x: hidden;
 }
 
+/* Decorative serving background */
 body::before {
-  content: "🍽️     🥄     🍴     🍽️     🥄     🍴";
+  content: "🍽️          🍴          🥄          🍽️";
   position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0.07;
-  color: #d7b76b;
-  font-size: 45px;
-  line-height: 150px;
-  word-spacing: 25px;
-  overflow: hidden;
+  top: 8%;
+  left: -15px;
+  width: 110%;
+  font-size: clamp(35px, 7vw, 75px);
+  line-height: 2.5;
+  letter-spacing: 25px;
+  color: var(--gold);
+  opacity: .16;
+  z-index: 0;
   pointer-events: none;
+  transform: rotate(-12deg);
+}
+
+body::after {
+  content: "🥄          🍽️          🍴          🥄";
+  position: fixed;
+  bottom: 3%;
+  left: -20px;
+  width: 110%;
+  font-size: clamp(35px, 7vw, 75px);
+  line-height: 2.5;
+  letter-spacing: 25px;
+  opacity: .13;
+  z-index: 0;
+  pointer-events: none;
+  transform: rotate(10deg);
+}
+
+header, main, footer, section {
+  position: relative;
+  z-index: 1;
 }
 
 header {
-  padding: 22px 7%;
+  min-height: 85px;
+  padding: 20px 7%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #b99a55;
-  background: #080808;
+  justify-content: space-between;
+  gap: 15px;
+  background: rgba(5,5,5,.95);
+  border-bottom: 1px solid #8f713c;
+  position: relative;
+  z-index: 2;
 }
 
 .logo {
-  color: #d7b76b;
   font-family: 'Playfair Display', serif;
+  color: var(--gold);
   font-size: 25px;
   letter-spacing: 3px;
 }
 
+nav {
+  display: flex;
+  gap: 22px;
+}
+
 nav a {
-  color: white;
+  color: #eee;
   text-decoration: none;
-  margin-left: 15px;
   font-size: 13px;
 }
 
+nav a:hover {
+  color: var(--gold);
+}
+
 .hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 100px 20px;
+  padding: 80px 20px;
   background:
-    linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.92)),
-    radial-gradient(circle at center,#6d5425,#080808 70%);
-  border-bottom: 1px solid #8d713c;
+    linear-gradient(rgba(0,0,0,.76),rgba(0,0,0,.88)),
+    radial-gradient(ellipse at center,#735629,#21180e 45%,#080808 80%);
+  border-bottom: 1px solid #765d33;
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.eyebrow {
+  color: var(--lightgold);
+  letter-spacing: 5px;
+  font-size: 12px;
+  margin-bottom: 22px;
 }
 
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 45px;
-  color: #d9b86b;
-  letter-spacing: 4px;
+  color: var(--gold);
+  font-size: clamp(38px,7vw,72px);
+  letter-spacing: 5px;
+  text-shadow: 0 4px 25px #000;
+}
+
+.gold-line {
+  width: 100px;
+  height: 2px;
+  background: var(--gold);
+  margin: 25px auto;
 }
 
 .hero p {
-  color: #ccc;
-  margin: 20px auto;
-  line-height: 1.8;
+  color: #eee;
+  line-height: 2;
+  font-size: 15px;
+  margin-bottom: 30px;
 }
 
 .btn {
   display: inline-block;
-  background: #c5a45e;
-  color: #080808;
-  padding: 14px 25px;
+  background: linear-gradient(135deg,#f1d99b,#bd964d);
+  color: #090909;
   text-decoration: none;
-  font-weight: 600;
-  border-radius: 4px;
+  padding: 15px 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 3px;
 }
 
 section {
-  padding: 65px 8%;
+  padding: 80px 8%;
   text-align: center;
 }
 
-h2 {
-  color: #d7b76b;
+.section-title {
   font-family: 'Playfair Display', serif;
-  font-size: 30px;
-  margin-bottom: 20px;
+  color: var(--gold);
+  font-size: 34px;
+  margin-bottom: 18px;
 }
 
-.desc {
-  color: #bbb;
-  line-height: 1.8;
-  max-width: 650px;
-  margin: auto;
+.description {
+  color: #ccc;
+  max-width: 700px;
+  line-height: 2;
+  margin: 0 auto;
+  font-size: 14px;
 }
 
 .services {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-  gap: 18px;
-  margin-top: 30px;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 22px;
+  margin-top: 40px;
 }
 
-.service {
-  border: 1px solid #a88a4c;
-  padding: 28px 12px;
-  border-radius: 8px;
-  background: rgba(20,20,20,.85);
+.service-card {
+  background: linear-gradient(145deg,rgba(43,34,22,.95),rgba(10,10,10,.95));
+  border: 1px solid #8d713e;
+  border-radius: 7px;
+  padding: 35px 20px;
+  transition: .3s;
 }
 
-.service h3 {
-  color: #d7b76b;
-  margin-bottom: 12px;
+.service-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--lightgold);
+}
+
+.service-icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  color: var(--gold);
   font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  margin-bottom: 12px;
 }
 
-.service p {
-  color: #bbb;
-  font-size: 14px;
-  line-height: 1.6;
+.service-card p {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.booking-section {
+  background: rgba(0,0,0,.45);
 }
 
 form {
-  max-width: 550px;
-  margin: 30px auto;
+  max-width: 600px;
+  margin: 35px auto 0;
+  padding: 35px;
   text-align: left;
-  padding: 25px;
-  background: rgba(18,18,18,.94);
-  border: 1px solid #8d713c;
-  border-radius: 10px;
+  border: 1px solid #a0834a;
+  border-radius: 8px;
+  background: linear-gradient(145deg,rgba(35,28,19,.98),rgba(9,9,9,.98));
+  box-shadow: 0 15px 45px rgba(0,0,0,.5);
+}
+
+label {
+  display: block;
+  color: var(--lightgold);
+  font-size: 13px;
+  margin-top: 16px;
 }
 
 input, select, textarea {
   width: 100%;
   padding: 14px;
-  margin: 9px 0 17px;
-  background: #171717;
-  border: 1px solid #766039;
+  margin-top: 8px;
+  background: #111;
   color: white;
-  border-radius: 5px;
-  font-family: 'Poppins', sans-serif;
+  border: 1px solid #6d5835;
+  border-radius: 4px;
+  font-family: 'Poppins',sans-serif;
+  font-size: 13px;
+  outline: none;
 }
 
-label {
-  color: #d7b76b;
-  font-size: 13px;
+input:focus, select:focus, textarea:focus {
+  border-color: var(--lightgold);
+}
+
+input::placeholder, textarea::placeholder {
+  color: #999;
+}
+
+select option {
+  background: #111;
+  color: white;
+}
+
+.other-box {
+  display: none;
+}
+
+.other-box.show {
+  display: block;
 }
 
 button {
   width: 100%;
-  padding: 15px;
-  background: #c5a45e;
-  color: #080808;
-  border: 0;
-  font-weight: bold;
-  font-size: 15px;
-  border-radius: 5px;
-  margin-top: 12px;
-  font-family: 'Poppins', sans-serif;
+  margin-top: 25px;
+  padding: 16px;
+  border: none;
+  border-radius: 4px;
+  background: linear-gradient(135deg,#f1d99b,#bd964d);
+  color: #090909;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: 'Poppins',sans-serif;
+  cursor: pointer;
+  letter-spacing: 1px;
 }
 
-.hidden {
-  display: none;
+button:hover {
+  filter: brightness(1.12);
 }
 
 footer {
-  padding: 30px;
   text-align: center;
-  background: #15120b;
-  color: #c5a45e;
-  line-height: 2;
+  padding: 45px 20px;
+  background: #080808;
+  border-top: 1px solid #8d713e;
+}
+
+footer h2 {
+  color: var(--gold);
+  font-family: 'Playfair Display',serif;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+footer p {
+  color: #aaa;
+  font-size: 12px;
+  line-height: 2.2;
 }
 
 @media(max-width:600px) {
-  .hero h1 { font-size: 32px; }
-  header { flex-direction: column; gap: 15px; }
+  header {
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 15px;
+  }
+
+  .hero {
+    min-height: 470px;
+  }
+
+  form {
+    padding: 22px 17px;
+  }
+
+  section {
+    padding: 60px 6%;
+  }
 }
 </style>
 </head>
@@ -204,111 +354,146 @@ footer {
   </nav>
 </header>
 
-<div class="hero" id="home">
-  <h1>ZYRA CATERINGS</h1>
-  <p>Premium Event Serving Services<br>
-  Making Every Occasion Special</p>
-  <a class="btn" href="#booking">BOOK OUR SERVICE</a>
-</div>
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">ELEGANCE • SERVICE • EXCELLENCE</div>
+    <h1>ZYRA CATERINGS</h1>
+    <div class="gold-line"></div>
+    <p>
+      PREMIUM EVENT SERVING SERVICES<br>
+      Making Every Occasion Special
+    </p>
+    <a href="#booking" class="btn">BOOK OUR SERVICE</a>
+  </div>
+</section>
 
 <section>
-  <h2>WELCOME TO ZYRA</h2>
-  <p class="desc">
+  <h2 class="section-title">WELCOME TO ZYRA</h2>
+  <div class="gold-line"></div>
+  <p class="description">
     We provide professional serving staff for weddings,
     receptions, birthdays and special occasions.
-    Our goal is to make every event smooth and memorable.
+    Our goal is to make every event smooth, elegant
+    and memorable with dedicated serving support.
   </p>
 </section>
 
 <section id="services">
-  <h2>OUR SERVICES</h2>
+  <h2 class="section-title">OUR SERVICES</h2>
+  <div class="gold-line"></div>
+
   <div class="services">
-    <div class="service">
-      <h3>Weddings</h3>
-      <p>Professional event serving support.</p>
+
+    <div class="service-card">
+      <div class="service-icon">🍽️</div>
+      <h3>Wedding Events</h3>
+      <p>Professional serving support for wedding celebrations.</p>
     </div>
-    <div class="service">
-      <h3>Receptions</h3>
-      <p>Serving staff for your special day.</p>
+
+    <div class="service-card">
+      <div class="service-icon">🥂</div>
+      <h3>Reception</h3>
+      <p>Dedicated serving staff for your special occasion.</p>
     </div>
-    <div class="service">
-      <h3>Birthdays</h3>
-      <p>Serving support for celebrations.</p>
+
+    <div class="service-card">
+      <div class="service-icon">🎉</div>
+      <h3>Birthday Events</h3>
+      <p>Serving support for memorable birthday celebrations.</p>
     </div>
-    <div class="service">
+
+    <div class="service-card">
+      <div class="service-icon">🏢</div>
       <h3>Corporate Events</h3>
-      <p>Professional event serving teams.</p>
+      <p>Professional staff support for corporate gatherings.</p>
     </div>
+
   </div>
 </section>
 
-<section id="booking">
-  <h2>BOOK OUR SERVICE</h2>
-  <p class="desc">Fill in your event details. Our team will contact you.</p>
+<section class="booking-section" id="booking">
+  <h2 class="section-title">BOOK OUR SERVICE</h2>
+  <div class="gold-line"></div>
+  <p class="description">
+    Share your event details. We will contact you shortly.
+  </p>
 
   <form id="bookingForm">
 
-    <label>Full Name</label>
-    <input id="name" required placeholder="Your full name">
+    <label>Full Name *</label>
+    <input id="name" type="text" required placeholder="Enter your full name">
 
-    <label>Mobile Number</label>
-    <input id="mobile" required type="tel"
-    pattern="[0-9]{10}" placeholder="10 digit mobile number">
+    <label>Mobile Number *</label>
+    <input id="mobile" type="tel" required
+    pattern="[0-9]{10}" maxlength="10"
+    placeholder="Enter 10 digit mobile number">
 
-    <label>Event Type</label>
+    <label>Event Type *</label>
     <select id="event" required>
-      <option value="">Select Event</option>
+      <option value="">Select Event Type</option>
       <option>Wedding</option>
       <option>Reception</option>
       <option>Engagement</option>
       <option>Birthday</option>
       <option>Corporate Event</option>
+      <option>Anniversary</option>
+      <option>Housewarming</option>
       <option>Other</option>
     </select>
 
-    <div id="eventOtherBox" class="hidden">
-      <label>Enter Your Event Type</label>
-      <input id="eventOther" placeholder="Type your event">
+    <div id="eventOtherBox" class="other-box">
+      <label>Enter Your Event Type *</label>
+      <input id="eventOther" type="text"
+      placeholder="Type your event name">
     </div>
 
-    <label>Event Date</label>
-    <input id="date" required type="date">
+    <label>Event Date *</label>
+    <input id="date" type="date" required>
 
-    <label>Expected Guest Count</label>
-    <input id="guests" required type="number"
-    min="1" placeholder="Number of guests">
+    <label>Expected Guest Count *</label>
+    <input id="guests" type="number" min="1"
+    required placeholder="Enter number of guests">
 
-    <label>Event Location</label>
-    <input id="location" required placeholder="Venue / City">
+    <label>Event Location *</label>
+    <input id="location" type="text" required
+    placeholder="Enter event venue / location">
 
-    <label>Service Required</label>
+    <label>Service Required *</label>
     <select id="service" required>
       <option value="">Select Service</option>
       <option>Food Serving Staff</option>
-      <option>Water Serving</option>
+      <option>Water Serving Staff</option>
+      <option>Welcome Drink Serving</option>
       <option>Complete Serving Team</option>
+      <option>Table Serving</option>
       <option>Other</option>
     </select>
 
-    <div id="serviceOtherBox" class="hidden">
-      <label>Enter Your Required Service</label>
-      <input id="serviceOther" placeholder="Type your service requirement">
+    <div id="serviceOtherBox" class="other-box">
+      <label>Enter Your Required Service *</label>
+      <input id="serviceOther" type="text"
+      placeholder="Type your service requirement">
     </div>
 
     <label>Additional Requirements</label>
     <textarea id="notes" rows="4"
-    placeholder="Any other details"></textarea>
+    placeholder="Enter any additional requirements"></textarea>
 
     <button type="submit">SEND BOOKING ENQUIRY</button>
+
   </form>
 </section>
 
+</main>
+
 <footer>
   <h2>ZYRA CATERINGS</h2>
-  <p>Premium Serving Services</p>
+  <p>Premium Event Serving Services</p>
   <p>WhatsApp: +91 9952625077</p>
   <p>Founder: Sakthi</p>
-  <p>© 2026 Zyra Caterings. All Rights Reserved.</p>
+  <p>© 2026 ZYRA CATERINGS. All Rights Reserved.</p>
 </footer>
 
 <script>
@@ -317,17 +502,17 @@ const serviceSelect = document.getElementById("service");
 
 eventSelect.addEventListener("change", function() {
   const show = this.value === "Other";
-  document.getElementById("eventOtherBox").classList.toggle("hidden", !show);
+  document.getElementById("eventOtherBox").classList.toggle("show",show);
   document.getElementById("eventOther").required = show;
 });
 
 serviceSelect.addEventListener("change", function() {
   const show = this.value === "Other";
-  document.getElementById("serviceOtherBox").classList.toggle("hidden", !show);
+  document.getElementById("serviceOtherBox").classList.toggle("show",show);
   document.getElementById("serviceOther").required = show;
 });
 
-document.getElementById("bookingForm").addEventListener("submit", function(e) {
+document.getElementById("bookingForm").addEventListener("submit",function(e) {
   e.preventDefault();
 
   const eventValue = eventSelect.value === "Other"
@@ -338,18 +523,19 @@ document.getElementById("bookingForm").addEventListener("submit", function(e) {
     ? document.getElementById("serviceOther").value
     : serviceSelect.value;
 
-  let msg = "ZYRA CATERINGS - NEW BOOKING ENQUIRY\n\n";
-  msg += "Full Name: " + document.getElementById("name").value + "\n";
-  msg += "Mobile: " + document.getElementById("mobile").value + "\n";
-  msg += "Event Type: " + eventValue + "\n";
-  msg += "Event Date: " + document.getElementById("date").value + "\n";
-  msg += "Guests: " + document.getElementById("guests").value + "\n";
-  msg += "Location: " + document.getElementById("location").value + "\n";
-  msg += "Service Required: " + serviceValue + "\n";
-  msg += "Additional Requirements: " + document.getElementById("notes").value;
+  let message = "ZYRA CATERINGS - NEW BOOKING ENQUIRY\n\n";
+
+  message += "Name: " + document.getElementById("name").value + "\n";
+  message += "Mobile: " + document.getElementById("mobile").value + "\n";
+  message += "Event: " + eventValue + "\n";
+  message += "Date: " + document.getElementById("date").value + "\n";
+  message += "Guests: " + document.getElementById("guests").value + "\n";
+  message += "Location: " + document.getElementById("location").value + "\n";
+  message += "Service: " + serviceValue + "\n";
+  message += "Additional Requirements: " + document.getElementById("notes").value;
 
   window.open(
-    "https://wa.me/919952625077?text=" + encodeURIComponent(msg),
+    "https://wa.me/919952625077?text=" + encodeURIComponent(message),
     "_blank"
   );
 });
